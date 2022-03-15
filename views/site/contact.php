@@ -9,7 +9,7 @@ use yii\bootstrap4\Html;
 use yii\captcha\Captcha;
 ?>
 <div class="site-contact">
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode(Yii::$app->controller->getHeading()) ?></h1>
 
     <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
 

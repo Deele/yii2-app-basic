@@ -83,7 +83,8 @@ class SiteController extends Controller
 
         $model->password = '';
         return $this
-            ->setTitle('Login')
+            ->setHeading('Login')
+            ->setTitle($this->getHeading())
             ->addBreadCrumbs([
                 $this->getTitle()
             ])
@@ -118,7 +119,8 @@ class SiteController extends Controller
             return $this->refresh();
         }
         return $this
-            ->setTitle('Contact')
+            ->setHeading('Contact')
+            ->setTitle($this->getHeading())
             ->addBreadCrumbs([
                 $this->getTitle()
             ])
@@ -135,7 +137,8 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this
-            ->setTitle('About')
+            ->setHeading('About')
+            ->setTitle($this->getHeading())
             ->addBreadCrumbs([
                 $this->getTitle()
             ])

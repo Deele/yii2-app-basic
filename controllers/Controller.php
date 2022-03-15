@@ -13,6 +13,7 @@ use yii\widgets\Breadcrumbs;
  *
  * @property string $title {@see Controller::setTitle()} {@see Controller::getTitle()}
  * @property array $breadcrumbs {@see Controller::setBreadCrumbs()} {@see Controller::getBreadCrumbs()}
+ * @property string|null $heading {@see Controller::setHeading()} {@see Controller::getHeading()}
  */
 abstract class Controller extends YiiWebController
 {
@@ -35,6 +36,7 @@ abstract class Controller extends YiiWebController
 
     /**
      * Returns the page title
+     * The text that is commonly placed in `<title></title>` of the document
      *
      * @return string
      */
@@ -85,5 +87,32 @@ abstract class Controller extends YiiWebController
         } catch (Exception $e) {
         }
         return [];
+    }
+
+    /**
+     * Sets page heading
+     *
+     * @param string $heading
+     * @return $this
+     */
+    public function setHeading(string $heading): self
+    {
+        $this->view->params['heading'] = $heading;
+        return $this;
+    }
+
+    /**
+     * Returns page heading
+     * The text that is commonly placed in `<h1></h1>` of the document
+     *
+     * @return string|null
+     */
+    public function getHeading(): ?string
+    {
+        try {
+            return ArrayHelper::getValue($this->view->params, 'heading');
+        } catch (Exception $e) {
+        }
+        return null;
     }
 }

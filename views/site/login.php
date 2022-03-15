@@ -8,7 +8,7 @@ use yii\bootstrap4\ActiveForm;
 use yii\bootstrap4\Html;
 ?>
 <div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode(Yii::$app->controller->getHeading()) ?></h1>
 
     <p>Please fill out the following fields to login:</p>
 
