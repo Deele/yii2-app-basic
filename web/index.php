@@ -1,14 +1,19 @@
 <?php
 
-// comment out the following two lines when deployed to production
-defined('YII_DEBUG') or define('YII_DEBUG', true);
-defined('YII_ENV') or define('YII_ENV', 'dev');
-
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
 $dotenv->load();
+
+defined('YII_DEBUG') or define(
+    'YII_DEBUG',
+    isset($_SERVER['DEBUG_MODE']) && $_SERVER['DEBUG_MODE'] === '1'
+);
+defined('YII_ENV') or define(
+    'YII_ENV',
+    $_SERVER['ENVIRONMENT'] ?? 'prod'
+);
 
 $config = require __DIR__ . '/../config/web.php';
 
