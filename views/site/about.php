@@ -1,6 +1,7 @@
 <?php
 
 /** @var yii\web\View $this */
+/** @todo Remove developer note text and replace about page text with meaningful one */
 
 use yii\helpers\Html;
 ?>

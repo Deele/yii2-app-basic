@@ -3,6 +3,7 @@
 /** @var yii\web\View $this */
 /** @var yii\bootstrap4\ActiveForm $form */
 /** @var app\models\LoginForm $model */
+/** @todo Remove developer note text and replace login page text with meaningful one */
 
 use yii\bootstrap4\ActiveForm;
 use yii\bootstrap4\Html;

@@ -1,6 +1,7 @@
 <?php
 
 /** @var yii\web\View $this */
+/** @todo Remove developer note text and replace index page text with meaningful one */
 ?>
 <div class="site-index">
 

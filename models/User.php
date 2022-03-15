@@ -10,6 +10,9 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
     public $authKey;
     public $accessToken;
 
+    /**
+     * @todo Replace default users and passwords with different ones
+     */
     private static $users = [
         '100' => [
             'id' => '100',
