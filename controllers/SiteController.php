@@ -4,7 +4,6 @@ namespace app\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
-use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
@@ -61,7 +60,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        return $this
+            ->setTitle('My Yii Application')
+            ->render('index');
     }
 
     /**
@@ -81,9 +82,11 @@ class SiteController extends Controller
         }
 
         $model->password = '';
-        return $this->render('login', [
-            'model' => $model,
-        ]);
+        return $this
+            ->setTitle('Login')
+            ->render('login', [
+                'model' => $model,
+            ]);
     }
 
     /**
@@ -111,9 +114,11 @@ class SiteController extends Controller
 
             return $this->refresh();
         }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
+        return $this
+            ->setTitle('Contact')
+            ->render('contact', [
+                'model' => $model,
+            ]);
     }
 
     /**
@@ -123,6 +128,8 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        return $this->render('about');
+        return $this
+            ->setTitle('About')
+            ->render('about');
     }
 }
