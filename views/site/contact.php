@@ -13,9 +13,10 @@ use yii\captcha\Captcha;
 
     <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
 
-        <div class="alert alert-success">
-            Thank you for contacting us. We will respond to you as soon as possible.
-        </div>
+        <div class="alert alert-success"><?= Yii::t(
+                'app',
+                'Thank you for contacting us. We will respond to you as soon as possible.'
+            ) ?></div>
 
         <p>
             Note that if you turn on the Yii debugger, you should be able
@@ -30,10 +31,10 @@ use yii\captcha\Captcha;
 
     <?php else: ?>
 
-        <p>
-            If you have business inquiries or other questions, please fill out the following form to contact us.
-            Thank you.
-        </p>
+        <p><?= Yii::t(
+                'app',
+                'If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.'
+            ) ?></p>
 
         <div class="row">
             <div class="col-lg-5">
@@ -53,7 +54,10 @@ use yii\captcha\Captcha;
                     ]) ?>
 
                     <div class="form-group">
-                        <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
+                        <?= Html::submitButton(Yii::t(
+                            'app',
+                            'Submit'
+                        ), ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
                     </div>
 
                 <?php ActiveForm::end(); ?>
