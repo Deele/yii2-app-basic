@@ -84,6 +84,9 @@ class SiteController extends Controller
         $model->password = '';
         return $this
             ->setTitle('Login')
+            ->addBreadCrumbs([
+                $this->getTitle()
+            ])
             ->render('login', [
                 'model' => $model,
             ]);
@@ -116,6 +119,9 @@ class SiteController extends Controller
         }
         return $this
             ->setTitle('Contact')
+            ->addBreadCrumbs([
+                $this->getTitle()
+            ])
             ->render('contact', [
                 'model' => $model,
             ]);
@@ -130,6 +136,9 @@ class SiteController extends Controller
     {
         return $this
             ->setTitle('About')
+            ->addBreadCrumbs([
+                $this->getTitle()
+            ])
             ->render('about');
     }
 }
